@@ -1,0 +1,48 @@
+/* IAMELLIOTT MEDIA MAP
+ * To replace an image or film: upload your new file to this repository,
+ * then change its filename below. Do not edit HTML on every page.
+ * Files are relative to the site root. External HTTPS links also work.
+ */
+window.IAM_MEDIA = Object.freeze({
+  about: 'about.gif',               // replace with a still JPG/WEBP when wanted
+  indexBackdrop: 'INDEX_BACKGROUND.mp4',
+  ambientBackdrop: 'SITE_BACKGROUND.mp4',
+  door: 'door.mp4',
+  greenDoor01: 'gd1.mp4',
+  greenDoor02: 'gd2.mp4',
+  greenDoor03: 'gd3.mp4',
+  greenDoor04: 'gd4.mp4',
+  ntwi01: 'ntwi1.mp4',
+  ntwi02: 'ntwi2.mp4',
+  ntwi03: 'ntwi3.mp4',
+  equinox01: 'eq1.mp4',
+  equinox02: 'eq2.mp4',
+  equinox03: 'eq3.mp4',
+  equinox04: 'eq4.mp4',
+  equinox05: 'eq5.mp4',
+  equinox06: 'eq6.mp4',
+  collaboration01: 'collab1.mp4',
+  collaboration02: 'collab2.mp4',
+  welcomeMat01: 'wm1.mp4',
+  welcomeMat02: 'wm2.mp4',
+  welcomeMat03: 'wm3.mp4',
+  welcomeMat04: 'wm4.mp4',
+  welcomeMatPrint: 'welcome mat print.pdf',
+  hikeSociety: 'hs.mp4',
+  interviewMichael: 'mtm1michael.mp4',
+  interviewTim: 'mtm2tim.mp4',
+  interviewMarcus: 'mtm3marcus.mp4',
+  shortFilm01: 'reel1.mp4',
+  shortFilm02: 'reel2.mp4',
+  shortFilm03: 'reel3.mp4',
+  shortFilm04: 'reel4.mp4',
+  filmStill01: 'img2.webp',
+  filmStill02: 'img3.webp',
+  filmStill03: 'img5.webp',
+  butterflyStill: 'butterfly3.jpg',
+  butterflyDark: 'butterfly4.jpg',
+  butterflyWebm: 'butterflyloading.webm',
+  butterflyMov: 'butterflyloading.mov',
+  fallback: 'fallback.jpg',
+  issue: 'joah3.webp'
+});
