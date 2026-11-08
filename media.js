@@ -43,6 +43,13 @@ window.IAM_MEDIA = Object.freeze({
   butterflyDark: 'butterfly4.jpg',
   butterflyWebm: 'butterflyloading.webm',
   butterflyMov: 'butterflyloading.mov',
-  fallback: 'fallback.jpg',
+  fallback: 'fallback.gif',
+  overlayHome: 'overlay6.webp',
+  overlayGreenDoor: 'overlay2.mp4',
+  overlayCampaigns: 'overlay1.webp',
+  overlayCollaborations: 'overlay1.mp4',
+  overlayMoving: 'overlay3.mp4',
+  overlayPractical: 'overlay4.mp4',
+  overlayWelcomeMat: 'overlay8.gif',
   issue: 'joah3.webp'
 });
