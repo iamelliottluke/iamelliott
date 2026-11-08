@@ -83,3 +83,9 @@ img.media-error{opacity:1!important}
 @media(max-width:400px){.hero h1{font-size:clamp(44px,11.1vw,62px)}.case-heading h1{font-size:clamp(43px,10.4vw,72px)}}
 @media(max-height:540px){.case-hero,.hero{height:auto;min-height:calc(100svh - var(--header-height));overflow:visible}.case-heading h1{font-size:clamp(42px,7vw,88px)}}
 @media(prefers-reduced-motion:reduce){.header-overlay video{display:none}}
+
+/* Final visual QA: keep overlays incidental, and restore the index's absolute position. */
+.hero>.hero-number{position:absolute!important;right:var(--edge);bottom:80px;z-index:3}
+.hero .header-overlay .overlay-motion{opacity:.14!important;mix-blend-mode:soft-light!important}
+.case-hero .header-overlay .overlay-motion{opacity:.20!important}
+@media(max-width:650px){.hero>.hero-number{display:none}}
