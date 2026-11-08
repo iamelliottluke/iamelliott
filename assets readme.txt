@@ -34,3 +34,4 @@ butterflyloading.mov
 butterflyloading.webm
  = use for loading animation with background removed, timelapse of monarch butterfly emerging from chrysalsis, versions for android and apple transparent intact
 
+about.gif = gif of photos of me, use as portrait in about me section
