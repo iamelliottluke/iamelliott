@@ -35,3 +35,19 @@ butterflyloading.webm
  = use for loading animation with background removed, timelapse of monarch butterfly emerging from chrysalsis, versions for android and apple transparent intact
 
 about.gif = gif of photos of me, use as portrait in about me section
+
+fallback.gif = new fallback for all photos and videos in case of slow loading etc
+
+overlay6.webp = lower opacity and stretch to fit and overlay over the home page first section with the 'I make good ideas into good work' autoplay on loop on mute
+
+overlay2.mp4 = lower opacity and stretch to fit and overlay over the green door top section with I built a world, then opened the door. autoplay on loop on mute.
+
+overlay1.webp = lower opacity and stretch to fit and overlay over the Make them look. top section. autoplay on loop on mute.
+
+overlay1.mp4 = lower opacity and stretch to fit and overlay over the Good work, good company. top section. autoplay on loop on mute.
+
+overlay3.mp4 = lower opacity and stretch to fit and overlay over the Imagery that moves,top section. autoplay on loop on mute.
+
+overlay4.mp4 = lower opacity and stretch to fit and overlay over the working smarter not harder, top section. autoplay on loop on mute.
+
+overlay8.gif = lower opacity and stretch to fit and overlay over the The Welcome Mat, top section. autoplay on loop on mute.
