@@ -30,4 +30,7 @@ door.mp4 = reel of green door swinging up int frame, crop to centre and use as t
 
 butterfly.jpg = high quality royalty free no attribution required photos of monarch butterfly to use as assets throughout if needed
 
-butterfly loading.mp4 = use for loading animation with background removed, timelapse of monarch butterfly emerging from chrysalsis
+butterflyloading.mov
+butterflyloading.webm
+ = use for loading animation with background removed, timelapse of monarch butterfly emerging from chrysalsis, versions for android and apple transparent intact
+
