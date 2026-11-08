@@ -36,6 +36,7 @@ try:
       pg.wait_for_url('**/work/campaigns.html',timeout=12000)
       pg.screenshot(path=str(OUT/f'campaigns-{width}.png'),full_page=False)
       pg.go_back(wait_until='domcontentloaded')
+      pg.wait_for_timeout(1250)
      if width<=650:
       menu=pg.locator('.mobile-menu summary')
       menu.click()
@@ -44,7 +45,9 @@ try:
       pg.locator('.nav-desktop a[href$="#about"]').first.click()
      pg.wait_for_timeout(900)
      top=pg.eval_on_selector('#about','el=>Math.round(el.getBoundingClientRect().top)')
-     if abs(top)>5:issues.append(f'ABOUT ANCHOR {width} => {top}')
+     if abs(top)>5:
+      issues.append(f'ABOUT ANCHOR {width} => {top}')
+      pg.screenshot(path=str(OUT/f'about-anchor-issue-{width}.png'),full_page=False)
     else:
      pg.locator('.jump').first.click()
      pg.wait_for_timeout(900)
