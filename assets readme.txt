@@ -39,8 +39,6 @@ overlay4.mp4 = lower opacity and stretch to fit and overlay over the working sma
 top section. autoplay on loop on mute.
 overlay8.gif = lower opacity and stretch to fit and overlay over the The Welcome Mat, top
 section. autoplay on loop on mute.
-butterfly3.jpg = scale to fit blend/remove white background, on first page behind the "I make good ideas into good work." text
-butterfly4.jpg = scale to fit blend/remove white background, on 03 page behind the "I dream it up.I figure it out.I make it fucking real." text
 receipt.mp4 = use a preview looping autoplay mute visual and as added visual within case study
 receipt.pdf = use as supporting visual in relevant case study
-favicon.jpeg = use as favicon
+butterfly.gif = use on main header page and smaller copy on last contact page (see visual in chat)
