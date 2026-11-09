@@ -549,3 +549,55 @@ body.home .method .method-butterflies {
   body.home .hero h1 { font-size:clamp(58px,7.5vw,106px); }
   body.home .hero .butterfly-spot { top:-5%;width:min(41vw,440px); }
 }
+
+
+/* Build 04 final launch: left-anchored method copy and balanced butterfly. */
+@media (min-width:741px) {
+  body.home .method-bottom {
+    margin-left:0;
+    width:100%;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:clamp(32px,6vw,110px);
+    align-items:start;
+  }
+  body.home .method-bottom p {
+    margin:0;
+    max-width:560px;
+    text-align:left;
+  }
+  body.home .method-bottom p:nth-child(2) {justify-self:start}
+  body.home .method .method-butterflies {
+    width:clamp(220px,32vw,470px);
+    height:auto;
+    top:clamp(130px,15vw,235px);
+    right:clamp(0px,4vw,85px);
+    transform:rotate(30deg);
+    opacity:.24;
+  }
+}
+@media (max-width:740px) {
+  body.home .method-bottom {margin-left:0;width:100%;text-align:left;}
+  body.home .method-bottom p {max-width:100%;text-align:left}
+  body.home .method .method-butterflies {top:9%;right:0;opacity:.20}
+}
+/* Receipt is a full-width horizontal photographic divider, not an embedded PDF viewer. */
+.receipt-divider {
+  margin:0;
+  width:100%;
+  padding:clamp(22px,4vw,62px) 0;
+  border-bottom:1px solid var(--line);
+}
+.receipt-divider img {
+  display:block;
+  width:100%;
+  max-height:clamp(120px,20vw,280px);
+  object-fit:contain;
+  object-position:center;
+}
+.receipt-divider figcaption {
+  font:500 10px/1.5 var(--mono);
+  letter-spacing:.035em;
+  text-align:center;
+  margin-top:16px;
+}
+.receipt-followup {border-bottom:1px solid var(--line)}
