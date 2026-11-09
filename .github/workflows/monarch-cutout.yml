@@ -25,7 +25,7 @@ jobs:
           from pathlib import Path
           for name in ('butterfly3','butterfly4'):
               source=Path(name+'.jpg')
-              dest=Path(name+'-cutout.webp')
+              dest=Path(name+'-cutout.png')
               with Image.open(source) as im:
                   src=im.convert('RGB')
                   w,h=src.size
@@ -42,20 +42,15 @@ jobs:
                           a=round(255*(244-minimum)/34)
                       else:
                           a=255
-                      if 0<a<255:
-                          factor=a/255
-                          r=max(0,min(255,round((r-255*(1-factor))/factor)))
-                          g=max(0,min(255,round((g-255*(1-factor))/factor)))
-                          b=max(0,min(255,round((b-255*(1-factor))/factor)))
                       pixels.append((r,g,b,a))
                   out.putdata(pixels)
-                  out.save(dest,format='WEBP',lossless=True,method=6)
+                  out.save(dest,format='PNG',optimize=True)
                   print(dest,w,h,'size:',dest.stat().st_size)
       - name: Commit only transparent derivatives to review branch
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add butterfly3-cutout.webp butterfly4-cutout.webp
+          git add butterfly3-cutout.png butterfly4-cutout.png
           if ! git diff --cached --quiet; then
             git commit -m "Generate transparent monarch display assets"
             git push
