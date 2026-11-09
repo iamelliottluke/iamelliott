@@ -40,10 +40,9 @@ window.IAM_MEDIA = Object.freeze({
   filmStill02: 'img3.webp',
   filmStill03: 'img5.webp',
   receipt: 'receipt.mp4',
-  butterflyStill: 'butterfly3-cutout.png',
-  butterflyDark: 'butterfly4-cutout.png',
-  butterflyWebm: 'butterflyloading.webm',
-  butterflyMov: 'butterflyloading.mov',
+  butterfly: 'butterfly.gif',            // single animated butterfly for hero, process and contact
+  welcomeMatIllustration01: 'wm1.png',
+  welcomeMatIllustration02: 'wm2.png',
   fallback: 'fallback.gif',
   overlayHome: 'overlay6.webp',
   overlayGreenDoor: 'overlay2.mp4',

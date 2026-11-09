@@ -29,15 +29,7 @@
     video.addEventListener('error', () => video.classList.add('video-error'));
   });
 
-  // A small accent, not a loading gate. The video is only active if visible.
-  document.querySelectorAll('video[data-butterfly]').forEach(video => {
-    for (const source of video.querySelectorAll('source')) {
-      source.src = asset(source.dataset.type === 'quicktime' ? 'butterflyMov' : 'butterflyWebm');
-    }
-    video.load();
-  });
-
-  const previewVideos = [...document.querySelectorAll('video[data-preview], video[data-butterfly]')];
+  const previewVideos = [...document.querySelectorAll('video[data-preview]')];
   if ('IntersectionObserver' in window) {
     const mediaObserver = new IntersectionObserver(entries => {
       for (const entry of entries) {
