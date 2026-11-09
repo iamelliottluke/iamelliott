@@ -521,7 +521,7 @@ body.home .method .method-butterflies {
   }
   body.home .portrait-frame {
     width:min(78%,440px);
-    margin:clamp(18px,3vw,26px) auto clamp(25px,5vw,40px) 7%;
+    margin:clamp(40px,5vw,52px) auto clamp(25px,5vw,40px) 7%;
   }
   body.home .method .method-butterflies {
     width:clamp(156px,38.4vw,276px);

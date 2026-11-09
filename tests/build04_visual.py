@@ -146,11 +146,14 @@ try:
    animation_page.goto('http://127.0.0.1:8124/index.html',wait_until='domcontentloaded')
    for selector,section in [('.butterfly-spot img','.hero'),('.method-butterflies','.method'),('.contact-butterfly','.contact-section')]:
     asset=animation_page.locator(selector)
-    asset.scroll_into_view_if_needed()
+    animation_page.locator(section).scroll_into_view_if_needed()
     animation_page.wait_for_function("(selector) => { const a=document.querySelector(selector); return a && a.complete && a.naturalWidth>0; }",arg=selector,timeout=12000)
     actual=asset.get_attribute('src')
     if not actual.endswith('butterfly.gif'):
      problems.append(f'{label}: {selector} source is {actual}, expected butterfly.gif')
+    animation_page.evaluate('window.scrollTo({left:0})')
+    if animation_page.evaluate('document.documentElement.scrollWidth > document.documentElement.clientWidth + 2'):
+     problems.append(f'{label}: full-motion decorative content overflows viewport')
     animation_page.locator(section).screenshot(path=str(OUT/f'animated-{section[1:]}-{label}.png'),animations='allow')
    animation_context.close()
   browser.close()
