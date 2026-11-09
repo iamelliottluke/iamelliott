@@ -115,3 +115,46 @@ body.welcome-mat .film-mosaic .media-film video{aspect-ratio:1!important;object-
 
 /* Landscape viewport: keep the oversized monarch art inside the hero bounds. */
 @media (max-height:540px) and (min-width:741px){.hero .butterfly-spot{right:0;max-width:48vw}.method-butterflies{right:0}}
+
+/* Final editorial refinements / Nov 2026 */
+.film-quote blockquote{font-style:italic}
+.about-heading h2{margin-top:clamp(150px,11vw,190px)}
+.about-heading .handwriting{font-size:clamp(117px,13vw,208px);top:-.71em;left:.01em;right:auto;z-index:2;line-height:1;overflow:visible}
+.about-heading .loose-redact{z-index:1}
+.work-title{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:clamp(22px,3vw,46px);text-align:center}
+.work-title h2{margin:0;max-width:100%;text-align:center}
+.work-intro{margin:0 auto;max-width:min(100%,650px);text-align:center}
+.work-intro blockquote{text-align:center;font-size:clamp(30px,3.4vw,54px)}
+.work-intro .quote-translation{display:block;margin-top:6px;font:italic clamp(17px,1.8vw,24px)/1.24 var(--serif)}
+.work-intro small{display:block;margin:12px auto 0;max-width:430px;font-size:clamp(9px,.86vw,11px);line-height:1.5;letter-spacing:.015em;text-wrap:balance}
+.work-title .work-intro p{max-width:580px;margin:clamp(24px,3vw,40px) auto 0;font-size:clamp(16px,1.45vw,21px);line-height:1.45}
+.receipt-story{grid-template-columns:minmax(230px,.9fr) minmax(0,1.35fr);align-items:start}
+.receipt-story-side{min-width:0;display:flex;flex-direction:column;align-items:center}
+.receipt-story-side .kicker{width:100%;margin-top:11px}
+.receipt-story .receipt-case-visual{width:100%;max-width:410px;margin:clamp(24px,3vw,44px) auto 0;align-items:center}
+.receipt-story .receipt-case-visual video{width:100%;max-width:350px;max-height:min(75svh,690px)}
+.receipt-story .receipt-case-visual figcaption{text-align:center;align-self:center}
+.receipt-story>div:last-child h2{margin-top:0}
+.model-with-film .model-door figcaption{align-self:center;text-align:center;width:100%}
+.timeline strong{display:block;line-height:1.35;margin-top:12px;letter-spacing:.012em}
+.collab-split h2{overflow-wrap:normal;text-wrap:balance}
+@media(max-width:900px){
+  .receipt-story{grid-template-columns:minmax(185px,.75fr) minmax(0,1.4fr);gap:clamp(18px,3vw,34px)}
+  .receipt-story .receipt-case-visual video{max-width:100%}
+}
+@media(max-width:740px){
+  .about-heading h2{margin-top:clamp(150px,20vw,180px)}
+  .about-heading .handwriting{font-size:clamp(110px,26vw,161px);top:-.7em;left:0}
+  .work-title{gap:clamp(20px,5vw,38px);margin-block:35px}
+  .work-intro{max-width:min(100%,550px)}
+  .work-title .work-intro p{max-width:440px}
+  .receipt-story{display:flex;flex-direction:column;gap:clamp(22px,5vw,42px)}
+  .receipt-story-side{width:100%;gap:16px}
+  .receipt-story .receipt-case-visual{max-width:min(100%,350px);margin:0 auto}
+  .receipt-story .receipt-case-visual video{max-height:65svh}
+  .receipt-story>div:last-child h2{margin-top:0}
+}
+@media(max-width:420px){
+  .about-heading .handwriting{font-size:clamp(104px,27.3vw,138px);top:-.68em;left:0}
+  .work-title h2{font-size:clamp(51px,11vw,66px)}
+}
