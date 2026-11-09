@@ -147,7 +147,7 @@ try:
    for selector,section in [('.butterfly-spot img','.hero'),('.method-butterflies','.method'),('.contact-butterfly','.contact-section')]:
     asset=animation_page.locator(selector)
     asset.scroll_into_view_if_needed()
-    animation_page.wait_for_function("(selector) => { const a=document.querySelector(selector); return a && a.complete && a.naturalWidth>0; }",selector,timeout=12000)
+    animation_page.wait_for_function("(selector) => { const a=document.querySelector(selector); return a && a.complete && a.naturalWidth>0; }",arg=selector,timeout=12000)
     actual=asset.get_attribute('src')
     if not actual.endswith('butterfly.gif'):
      problems.append(f'{label}: {selector} source is {actual}, expected butterfly.gif')
