@@ -39,6 +39,7 @@ window.IAM_MEDIA = Object.freeze({
   filmStill01: 'img2.webp',
   filmStill02: 'img3.webp',
   filmStill03: 'img5.webp',
+  receipt: 'receipt.mp4',
   butterflyStill: 'butterfly3.jpg',
   butterflyDark: 'butterfly4.jpg',
   butterflyWebm: 'butterflyloading.webm',
