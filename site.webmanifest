@@ -1,0 +1,22 @@
+{
+  "name": "IAMELLIOTT — Elliott Luke",
+  "short_name": "IAMELLIOTT",
+  "description": "Creative direction, film, campaigns, events and practical ideas by Elliott Luke.",
+  "icons": [
+    {
+      "src": "/web-app-manifest-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/web-app-manifest-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "theme_color": "#ede9df",
+  "background_color": "#ede9df",
+  "display": "standalone"
+}
