@@ -357,3 +357,22 @@ body.welcome-mat .film-mosaic .media-film video{aspect-ratio:1!important;object-
 @media(prefers-reduced-motion:reduce){
   .hero .butterfly-spot,.method .method-butterflies,.contact-section .contact-butterfly{display:none}
 }
+
+/* Final mobile optical correction: keep butterfly away from the headline. */
+@media (max-width:740px){
+  .hero .butterfly-spot{
+    width:min(51vw,230px);
+    top:auto;
+    bottom:clamp(10px,3vh,25px);
+    right:1.5%;
+    opacity:.70;
+  }
+}
+@media (max-width:420px){
+  .hero .butterfly-spot{
+    width:min(49vw,190px);
+    top:auto;
+    bottom:clamp(8px,2.5vh,20px);
+    right:1.5%;
+  }
+}
