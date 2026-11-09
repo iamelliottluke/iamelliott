@@ -376,3 +376,176 @@ body.welcome-mat .film-mosaic .media-film video{aspect-ratio:1!important;object-
     right:1.5%;
   }
 }
+
+
+/* IAMELLIOTT FINAL ACCENT & OPTICAL FINISH — 10 NOV 2026
+   Corazon is homepage-only. The case-study palettes and their hover colours
+   are deliberately untouched. Change the colour in just this one variable. */
+:root { --accent-corazon: #CC2208; }
+body.home {
+  --rust: var(--accent-corazon);
+  --orange: var(--accent-corazon);
+  --accent: var(--accent-corazon);
+}
+/* The homepage's Corazon contact panel needs readable, light form text. */
+body.home .contact-section { color: #FFF4E9; }
+body.home .contact-section .contact-intro { border-bottom-color: rgba(255,244,233,.55); }
+body.home .contact-section .form-grid input,
+body.home .contact-section .form-grid textarea { border-bottom-color: rgba(255,244,233,.65); color:#FFF4E9; }
+body.home .contact-section .form-grid input::placeholder,
+body.home .contact-section .form-grid textarea::placeholder { color:rgba(255,244,233,.76); }
+body.home .contact-section .form-bottom button { background:#171917; color:#FFF4E9; }
+body.home .contact-section .contact-link:hover { color:#fff3ae!important; }
+
+/* Hero: same typefaces, but a larger, more decisive ending. */
+body.home .hero h1 {
+  font-size:clamp(84px,10.65vw,182px);
+  line-height:.94;
+  letter-spacing:-.095em;
+  max-width:100%;
+  padding-bottom:.13em;
+}
+body.home .hero h1 em {
+  font-size:1.17em;
+  letter-spacing:-.052em;
+  padding-inline:.025em .10em;
+  line-height:1;
+}
+body.home .hero-stage { align-items:center; }
+body.home .hero .butterfly-spot {
+  width:clamp(340px,49.5vw,715px);
+  top:-10%;
+  right:-1%;
+  bottom:auto;
+  opacity:.77;
+}
+/* Clear source attribution, scaled down to behave as a credit. */
+body.home .film-quote .quote-credit {
+  font-size:9px;
+  line-height:1.45;
+  letter-spacing:.055em;
+}
+/* Three true, equally weighted columns on wide desktops. */
+body.home .work-title {
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  align-items:center;
+  gap:clamp(22px,2.6vw,46px);
+}
+body.home .work-title > h2 {
+  width:100%;
+  text-align:center;
+  font-size:clamp(54px,5.2vw,89px);
+  line-height:1.04;
+}
+body.home .work-title > .work-intro {
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  width:100%;
+  min-width:0;
+  text-align:center;
+}
+body.home .work-title > .work-pitch {
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:100%;
+  min-width:0;
+  text-align:center;
+}
+body.home .work-title > .work-pitch p {
+  text-align:center;
+  margin:0;
+  max-width:365px;
+  text-wrap:balance;
+}
+/* The yellow-on-black lower-third mimics the commercial's TV subtitles. */
+body.home .work-title .quote-translation {
+  display:table;
+  width:max-content;
+  max-width:100%;
+  margin:9px auto 0;
+  padding:5px 10px 6px;
+  background:#111;
+  color:#F5E646;
+  border-radius:0;
+  font:700 clamp(15px,1.35vw,20px)/1.12 Arial,Helvetica,sans-serif;
+  letter-spacing:0;
+  text-align:center;
+  box-decoration-break:clone;
+}
+body.home .work-title > .work-intro small {
+  display:block;
+  font-size:9px;
+  line-height:1.35;
+  max-width:290px;
+  margin:12px auto 0;
+  letter-spacing:.01em;
+}
+/* About: preserve the handwritten-redaction effect, remove dead air. */
+body.home .about-section { padding-block:clamp(48px,5.3vw,85px); }
+body.home .about-heading h2 { margin-top:clamp(121px,9vw,155px);margin-bottom:clamp(15px,2vw,32px); }
+body.home .portrait-frame { margin:clamp(24px,2.5vw,42px) 0 0 5%; }
+body.home .method-bottom, body.home .method-bottom p { text-align:left; }
+body.home .method .method-butterflies {
+  width:clamp(210px,32.4vw,432px);
+  transform:rotate(30deg);
+  transform-origin:center;
+}
+/* On narrower screens, stack in reading order and keep every line legible. */
+@media (max-width:1170px) {
+  body.home .work-title { display:flex;flex-direction:column;gap:clamp(22px,3.4vw,38px); }
+  body.home .work-title > h2 { font-size:clamp(62px,8vw,94px);text-align:center; }
+  body.home .work-title > .work-pitch p { max-width:570px;text-align:center; }
+}
+@media (max-width:740px) {
+  body.home .hero h1 {
+    font-size:clamp(58px,13.8vw,98px);
+    line-height:.96;
+    letter-spacing:-.096em;
+    padding-bottom:.11em;
+  }
+  body.home .hero h1 em { font-size:1.17em;letter-spacing:-.065em; }
+  body.home .hero .butterfly-spot {
+    width:min(60vw,268px);
+    right:-1%;
+    top:auto;
+    bottom:clamp(22px,3.5vh,42px);
+    opacity:.77;
+  }
+  body.home .about-section { padding:clamp(48px,7vw,75px) var(--edge); }
+  body.home .about-heading h2 {
+    margin-top:clamp(109px,15vw,128px);
+    margin-bottom:15px;
+  }
+  body.home .portrait-frame {
+    width:min(78%,440px);
+    margin:clamp(18px,3vw,26px) auto clamp(25px,5vw,40px) 7%;
+  }
+  body.home .method .method-butterflies {
+    width:clamp(156px,38.4vw,276px);
+    transform:rotate(30deg);
+    right:0;
+    opacity:.25;
+  }
+  body.home .work-title > h2 { font-size:clamp(55px,11.6vw,86px); }
+  body.home .work-title > .work-intro small { font-size:9px; }
+  body.home .work-title > .work-pitch p { font-size:clamp(16px,4vw,19px); }
+}
+@media (max-width:420px) {
+  body.home .hero h1 { font-size:clamp(57px,15.35vw,64px); }
+  body.home .hero .butterfly-spot {
+    width:min(61vw,235px);
+    top:auto;
+    bottom:clamp(14px,3vh,28px);
+    right:-1%;
+  }
+  body.home .about-heading h2 { margin-top:112px; }
+  body.home .method .method-butterflies { width:clamp(156px,39vw,230px); }
+  body.home .work-title > h2 { font-size:clamp(52px,11.35vw,67px); }
+}
+@media (max-height:540px) and (min-width:741px) {
+  body.home .hero h1 { font-size:clamp(58px,7.5vw,106px); }
+  body.home .hero .butterfly-spot { top:-5%;width:min(41vw,440px); }
+}

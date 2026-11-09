@@ -30,3 +30,6 @@ Review changes on a separate branch first. Do not edit `CNAME` or Cloudflare DNS
 
 ## Contact
 The Formspree form action lives in `index.html`. Enquiry notifications are configured in your Formspree account; confirm delivery there after launch.
+
+## Homepage Corazon colour and final typography
+`build04.css` defines `--accent-corazon: #CC2208` under `IAMELLIOTT FINAL ACCENT & OPTICAL FINISH`. Change this one hexadecimal value to change the homepage's orange/red accents without affecting any project-page themes. The hero, Show/Don't Tell, butterfly and About overrides are grouped immediately below it.
