@@ -36,3 +36,5 @@ receipt.mp4 = use a preview looping autoplay mute visual and as added visual wit
 receipt.pdf = use as supporting visual in relevant case study, use its length to fill the void on left of content on relevant case study, the recipe can run the length of the sections ensuring the final tell elliott qr code is cut off (it's okay that the asset is publicly in the repository)
 butterfly.gif = use on main header page and smaller copy on last contact page (see visual in chat)
 gd1.mp4 = goes to the left of 'I wanted a reason to come over' autoplay and aligned
+wm1.png = illustration from the welcome mat, use to left of 'Something to read before you knock.' scale to fit
+wm2.png = illustration from the welcome mat, use to left of 'A little longer than a reel.' scale to fit
