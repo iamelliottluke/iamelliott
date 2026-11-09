@@ -27,6 +27,8 @@ try:
     records.append(dict(view,width=width,height=height))
     if view['scrollWidth']>view['clientWidth']+2:
      issues.append(f'HORIZONTAL OVERFLOW {width}x{height} {site}: {view["scrollWidth"]}>{view["clientWidth"]}')
+     offenders=pg.evaluate("""() => [...document.querySelectorAll('body *')].map(e=>{const r=e.getBoundingClientRect();return {name:e.tagName.toLowerCase()+'.'+e.className,x:Math.round(r.x),right:Math.round(r.right),w:Math.round(r.width)}}).filter(x=>x.right>innerWidth+2 || x.x < -12).sort((a,b)=>b.right-a.right).slice(0,16)""")
+     print('OVERFLOW DIAG',width,height,site,offenders)
     if height>540 and view['hero']>height-view['header']+3:
      issues.append(f'HERO TOO TALL {width}x{height} {site}: {view["hero"]} vs viewport {height}')
     if site=='index.html':
