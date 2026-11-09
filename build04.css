@@ -112,3 +112,6 @@ body.welcome-mat .film-mosaic .media-film video{aspect-ratio:1!important;object-
 .hero-lower{margin-top:10px}
 }
 @media(prefers-reduced-motion:reduce){.method-butterflies{opacity:.23}}
+
+/* Landscape viewport: keep the oversized monarch art inside the hero bounds. */
+@media (max-height:540px) and (min-width:741px){.hero .butterfly-spot{right:0;max-width:48vw}.method-butterflies{right:0}}
