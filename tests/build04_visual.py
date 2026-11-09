@@ -49,6 +49,51 @@ try:
      page.locator('.about-section').screenshot(path=str(OUT/f'about-{name}.png'))
      page.locator('.work-title').screenshot(path=str(OUT/f'work-title-{name}.png'))
      page.locator('.tile-systems').screenshot(path=str(OUT/f'receipt-tile-{name}.png'))
+    if url=='index.html':
+     assert page.locator('.portrait-frame>span').count()==0, 'About portrait caption remains'
+     assert page.locator('#method-heading').inner_text().strip().endswith('I make it real.'), 'Method headline still contains redaction'
+     assert page.locator('.work-title .quote-translation').inner_text()=='why not both?', 'Translation missing'
+     assert 'Mia Agraviador' in page.locator('.work-intro small').inner_text(), 'Old El Paso credit missing'
+     assert page.locator('.film-quote blockquote').evaluate("el=>getComputedStyle(el).fontStyle")=='italic', 'Film quote not italic'
+     assert abs(float(page.locator('.hero .overlay-motion').evaluate("el=>getComputedStyle(el).opacity"))-.29)<.005, 'Hero opacity differs'
+     if name in ('mobile','desktop'):
+      page.locator('.method').screenshot(path=str(OUT/f'method-{name}.png'))
+     about=page.locator('.handwriting').bounding_box()
+     if about and (about['x']<-12 or about['x']+about['width']>w+12):
+      problems.append(f'{name}: Elliott handwriting offscreen {about}')
+     heading=page.locator('.work-title h2').bounding_box()
+     quote=page.locator('.work-intro').bounding_box()
+     if heading and quote and quote['y']<heading['y']+heading['height']-5:
+      problems.append(f'{name}: Show Dont Tell quote overlaps heading')
+    if url.endswith('greendoor.html'):
+     names=page.locator('.film-mosaic.mosaic-3 figcaption').all_inner_texts()
+     if names!=['save the date.','aftermath','anywhere']:problems.append(f'{name}: Green Door captions are {names}')
+     if page.locator('.timeline strong').count()!=2:problems.append(f'{name}: Gathering timeline outcomes incomplete')
+     cap=page.locator('.model-door figcaption')
+     if cap.count():
+      box=cap.bounding_box()
+      parent=page.locator('.model-door').bounding_box()
+      if box and parent and abs((box['x']+box['width']/2)-(parent['x']+parent['width']/2))>9:
+       problems.append(f'{name}: knock knock not centered')
+    if url.endswith('collaborations.html'):
+     medusa=page.locator('.collab-split article').nth(0).inner_text()
+     jess=page.locator('.collab-split article').nth(1).inner_text()
+     if 'The perfect' not in medusa or 'Final Girl' not in jess or 'DJ KAYELO' not in jess:
+      problems.append(f'{name}: collaboration copy mismatch')
+     if name in ('mobile','desktop'):
+      page.locator('.collab-split').screenshot(path=str(OUT/f'collaborations-{name}.png'))
+    if url.endswith('practical-solutions.html'):
+     if page.locator('.receipt-story-side video[data-media="receipt"]').count()!=1:
+      problems.append(f'{name}: receipt video not aligned inside SDA block')
+     if page.locator('.receipt-case-visual figcaption').inner_text()!='custom workplace information receipts':
+      problems.append(f'{name}: receipt caption mismatch')
+     if name in ('mobile','desktop'):
+      page.locator('.receipt-story').screenshot(path=str(OUT/f'receipt-story-{name}.png'))
+     side=page.locator('.receipt-story-side').bounding_box()
+     body=page.locator('.receipt-story>div:last-child').bounding_box()
+     if side and body:
+      if w>900 and side['x']>=body['x']:problems.append(f'{name}: receipt is not left of SDA copy')
+      if w<=740 and side['y']>body['y']:problems.append(f'{name}: SDA receipt mobile order wrong')
     if w<=740:
      for key in ['mosaic','campaigns']:
       boxes=measures[key]
