@@ -1,15 +1,14 @@
 READ ME
 site file guide
-joah.webp = iamissue iamjoah pages
+instructions such as 'align to the left of' can be ignore for mobile layout optimisation, most instruction is for desktop layout. ensure both mobile and desktop are laid out as well as possible.
 reel.mp4 = elliott films short film teasers
-img.webp - stills from Hit and Run short film
 collab.mp4 = strongest clear collaborative reel posts
 eq.mp4 = gathering iv equinox afterglow reels
 gd.mp4 = strongest green door world building reels
 ntwi.mp4 = gathering iii nowhere to wear it strongest campaign reels
 wm.mp4 = strongest welcome mat reels, teaser then best excerpts from gathering iv including
 medusa mention
-hs.mp4 = hike society final reel that I produced
+hs.mp4 = hike society reel, align to the left of the 'People first. Pretty landscapes second.' section
 welcome mat print = printer ready edition of volume I of the welcome mat including all articles
 up until gathering iv
 mtm1michael = final interview I edited for MTM for michael
@@ -17,12 +16,6 @@ mtm2tim = final interview I edited for MTM for tim
 mtm3marcus = final interview I edited for MTM for marcus
 door.mp4 = reel of green door swinging up int frame, crop to centre and use as the cover looping
 visual for green door community
-butterfly.jpg = high quality royalty free no attribution required photos of monarch butterfly to
-use as assets throughout if needed
-butterflyloading.mov
-butterflyloading.webm
-= use for loading animation with background removed, timelapse of monarch butterfly emerging
-from chrysalsis, versions for android and apple transparent intact
 about.gif = gif of photos of me, use as portrait in about me section
 fallback.gif = new fallback for all photos and videos in case of slow loading etc
 overlay6.webp = lower opacity and stretch to fit and overlay over the home page first section
@@ -39,7 +32,9 @@ overlay4.mp4 = lower opacity and stretch to fit and overlay over the working sma
 top section. autoplay on loop on mute.
 overlay8.gif = lower opacity and stretch to fit and overlay over the The Welcome Mat, top
 section. autoplay on loop on mute.
-butterfly3.jpg = scale to fit blend/remove white background, on first page behind the "I make good ideas into good work." text
-butterfly4.jpg = scale to fit blend/remove white background, on 03 page behind the "I dream it up.I figure it out.I make it fucking real." text
-receipt.mp4 = use a preview looping autoplay mute visual and as added visual within case study
-receipt.pdf = use as supporting visual in relevant case study
+receipt.mp4 = use a preview looping autoplay mute visual and as added visual within case study aligned to the left of 'A fair go should be easier to find.'
+receipt.pdf = use as supporting visual in relevant case study, use its length to fill the void on left of content on relevant case study, the recipe can run the length of the sections ensuring the final tell elliott qr code is cut off (it's okay that the asset is publicly in the repository)
+butterfly.gif = use on main header page and smaller copy on last contact page (see visual in chat)
+gd1.mp4 = goes to the left of 'I wanted a reason to come over' autoplay and aligned
+wm1.png = illustration from the welcome mat, use to left of 'Something to read before you knock.' scale to fit
+wm2.png = illustration from the welcome mat, use to left of 'A little longer than a reel.' scale to fit

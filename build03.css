@@ -86,6 +86,6 @@ img.media-error{opacity:1!important}
 
 /* Final visual QA: keep overlays incidental, and restore the index's absolute position. */
 .hero>.hero-number{position:absolute!important;right:var(--edge);bottom:80px;z-index:3}
-.hero .header-overlay .overlay-motion{opacity:.14!important;mix-blend-mode:soft-light!important}
+.hero .header-overlay .overlay-motion{opacity:.29!important;mix-blend-mode:soft-light!important}
 .case-hero .header-overlay .overlay-motion{opacity:.20!important}
 @media(max-width:650px){.hero>.hero-number{display:none}}
