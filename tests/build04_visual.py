@@ -139,6 +139,20 @@ try:
       assert 'IE / 001' not in page.locator('body').inner_text()
      except AssertionError:problems.append(f'{name}: home visual assets not mapped')
    ctx.close()
+  # Exercise the actual animated GIF in normal-motion browser contexts.
+  for label,width,height in [('desktop',1440,900),('mobile',390,844)]:
+   animation_context=browser.new_context(viewport={'width':width,'height':height},reduced_motion='no-preference')
+   animation_page=animation_context.new_page()
+   animation_page.goto('http://127.0.0.1:8124/index.html',wait_until='domcontentloaded')
+   for selector,section in [('.butterfly-spot img','.hero'),('.method-butterflies','.method'),('.contact-butterfly','.contact-section')]:
+    asset=animation_page.locator(selector)
+    asset.scroll_into_view_if_needed()
+    animation_page.wait_for_function("(selector) => { const a=document.querySelector(selector); return a && a.complete && a.naturalWidth>0; }",selector,timeout=12000)
+    actual=asset.get_attribute('src')
+    if not actual.endswith('butterfly.gif'):
+     problems.append(f'{label}: {selector} source is {actual}, expected butterfly.gif')
+    animation_page.locator(section).screenshot(path=str(OUT/f'animated-{section[1:]}-{label}.png'),animations='allow')
+   animation_context.close()
   browser.close()
 finally:
  server.terminate()
