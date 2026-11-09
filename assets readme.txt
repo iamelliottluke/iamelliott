@@ -43,3 +43,4 @@ butterfly3.jpg = scale to fit blend/remove white background, on first page behin
 butterfly4.jpg = scale to fit blend/remove white background, on 03 page behind the "I dream it up.I figure it out.I make it fucking real." text
 receipt.mp4 = use a preview looping autoplay mute visual and as added visual within case study
 receipt.pdf = use as supporting visual in relevant case study
+favicon.jpeg = use as favicon
