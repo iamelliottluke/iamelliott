@@ -1,5 +1,6 @@
 READ ME
 site file guide
+instructions such as 'align to the left of' can be ignore for mobile layout optimisation, most instruction is for desktop layout. ensure both mobile and desktop are laid out as well as possible.
 reel.mp4 = elliott films short film teasers
 collab.mp4 = strongest clear collaborative reel posts
 eq.mp4 = gathering iv equinox afterglow reels
@@ -31,7 +32,7 @@ overlay4.mp4 = lower opacity and stretch to fit and overlay over the working sma
 top section. autoplay on loop on mute.
 overlay8.gif = lower opacity and stretch to fit and overlay over the The Welcome Mat, top
 section. autoplay on loop on mute.
-receipt.mp4 = use a preview looping autoplay mute visual and as added visual within case study
-receipt.pdf = use as supporting visual in relevant case study
+receipt.mp4 = use a preview looping autoplay mute visual and as added visual within case study aligned to the left of 'A fair go should be easier to find.'
+receipt.pdf = use as supporting visual in relevant case study, use its length to fill the void on left of content on relevant case study, the recipe can run the length of the sections ensuring the final tell elliott qr code is cut off (it's okay that the asset is publicly in the repository)
 butterfly.gif = use on main header page and smaller copy on last contact page (see visual in chat)
 gd1.mp4 = goes to the left of 'I wanted a reason to come over' autoplay and aligned
