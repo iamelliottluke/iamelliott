@@ -49,8 +49,12 @@ try:
      page.locator('.about-section').screenshot(path=str(OUT/f'about-{name}.png'))
      page.locator('.work-title').screenshot(path=str(OUT/f'work-title-{name}.png'))
      page.locator('.tile-systems').screenshot(path=str(OUT/f'receipt-tile-{name}.png'))
+     page.locator('.contact-section').screenshot(path=str(OUT/f'contact-{name}.png'))
     if url=='index.html':
      assert page.locator('.portrait-frame>span').count()==0, 'About portrait caption remains'
+     assert page.locator('.butterfly-spot img[data-media="butterfly"]').count()==1, 'Hero butterfly GIF missing'
+     assert page.locator('.method-butterflies[data-media="butterfly"]').count()==1, 'Method butterfly GIF missing'
+     assert page.locator('.contact-butterfly[data-media="butterfly"]').count()==1, 'Contact butterfly GIF missing'
      assert page.locator('#method-heading').inner_text().strip().endswith('I make it real.'), 'Method headline still contains redaction'
      assert page.locator('.work-title .quote-translation').inner_text()=='why not both?', 'Translation missing'
      assert 'Mia Agraviador' in page.locator('.work-intro small').inner_text(), 'Old El Paso credit missing'
@@ -63,8 +67,32 @@ try:
       problems.append(f'{name}: Elliott handwriting offscreen {about}')
      heading=page.locator('.work-title h2').bounding_box()
      quote=page.locator('.work-intro').bounding_box()
-     if heading and quote and quote['y']<heading['y']+heading['height']-5:
-      problems.append(f'{name}: Show Dont Tell quote overlaps heading')
+     pitch=page.locator('.work-pitch').bounding_box()
+     if heading and quote and pitch:
+      if w>=1200:
+       if heading['x']+heading['width']>quote['x']+4 or quote['x']+quote['width']>pitch['x']+4:
+        problems.append(f'{name}: three-column Show/Dont Tell content overlaps horizontally')
+       if abs((heading['y']+heading['height']/2)-(quote['y']+quote['height']/2))>135:
+        problems.append(f'{name}: three-column work content lacks vertical balance')
+      else:
+       if quote['y']<heading['y']+heading['height']-5 or pitch['y']<quote['y']+quote['height']-5:
+        problems.append(f'{name}: stacked Show/Dont Tell content overlaps vertically')
+    if url.endswith('greendoor.html'):
+     if page.locator('.story-feature-film video[data-media="greenDoor01"]').count()!=1:
+      problems.append(f'{name}: gd1 missing beside idea')
+     if name in ('desktop','mobile'):
+      page.locator('.story-with-feature').first.screenshot(path=str(OUT/f'gd-idea-{name}.png'))
+    if url.endswith('moving-imagery.html'):
+     if page.locator('.story-with-feature video[data-media="hikeSociety"]').count()!=1:
+      problems.append(f'{name}: Hike Society misplaced')
+     if name in ('desktop','mobile'):
+      page.locator('.story-with-feature').first.screenshot(path=str(OUT/f'hike-story-{name}.png'))
+    if url.endswith('welcome-mat.html'):
+     if page.locator('.story-feature-illustration img[data-media="welcomeMatIllustration01"]').count()!=1 or page.locator('.story-feature-illustration img[data-media="welcomeMatIllustration02"]').count()!=1:
+      problems.append(f'{name}: Welcome Mat illustrations missing')
+     if name in ('desktop','mobile'):
+      for i,fig in enumerate(page.locator('.story-with-illustration').all()):
+       fig.screenshot(path=str(OUT/f'wm-illustration-{i+1}-{name}.png'))
     if url.endswith('greendoor.html'):
      names=page.locator('.film-mosaic.mosaic-3 figcaption').all_inner_texts()
      if names!=['save the date.','aftermath','anywhere']:problems.append(f'{name}: Green Door captions are {names}')
@@ -105,8 +133,9 @@ try:
     if url=='index.html':
      try:
       assert page.locator('.tile-systems video[data-media="receipt"]').count()==1
-      assert page.locator('.method-butterflies[data-media="butterflyDark"]').count()==1
-      assert page.locator('.butterfly-spot img[data-media="butterflyStill"]').count()==1
+      assert page.locator('.method-butterflies[data-media="butterfly"]').count()==1
+      assert page.locator('.butterfly-spot img[data-media="butterfly"]').count()==1
+      assert page.locator('.contact-butterfly[data-media="butterfly"]').count()==1
       assert 'IE / 001' not in page.locator('body').inner_text()
      except AssertionError:problems.append(f'{name}: home visual assets not mapped')
    ctx.close()
