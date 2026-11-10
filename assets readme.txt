@@ -14,7 +14,8 @@ HOMEPAGE
 - butterfly.gif → hero, How I Work and contact, at individually controlled sizes/positions.
 - about.gif → looping portrait in About via media.js about.
 - e.gif → original animated handwritten Elliott above the About heading via media.js elliottSignature (replaces the older typeset handwritten text).
-- overlay5.webp → How I Work background, via media.js overlayMethod and site.js client-side green-screen key. It is present in the repository, stretched to cover the section at low opacity above the existing acid background. Its pixels are keyed in a canvas at page load; the original source is preserved.
+- overlay5.webp → original uploaded source for How I Work. This exact file has a dark red/brown matte (not green) and is byte-identical to overlay2.webp. Preserve it unchanged.
+- overlay5-keyed.webp → 10 KB transparent derivative of overlay5.webp removing the dark matte while preserving bright details; this is the file loaded by media.js overlayMethod. It is stretched to cover How I Work at low opacity, using screen blend on the acid background, avoiding the previous muddy tint. No per-visitor canvas processing.
 - Selected Work videos → door.mp4, ntwi2.mp4, collab1.mp4, hs.mp4, receipt.mp4, wm1.mp4 (mapped in media.js).
 
 CASE-STUDY HEADER OVERLAYS
@@ -58,6 +59,6 @@ BEHAVIOUR / ACCURACY
 
 BUILD 06 OPTICAL FINISH
 - e.gif is rendered 20% larger above the redacted jack, its centre aligned near the top of the word, with responsive width limits.
-- How I Work overlay5.webp is a still background keyed by the existing JS, not a new video.
+- How I Work uses a pre-keyed transparent still (overlay5-keyed.webp), not an in-browser green-screen process. The upload itself does not contain a green-screen background.
 - Selected Work prioritises Show. Don't Tell..., then Pick a project below.; on mobile the headline breaks into two deliberately larger lines and the quotation follows as a secondary item.
 - Practical Solutions section 03 keeps its original receipt video dimensions and left-aligned copy, centring the text column vertically beside the film on desktop. Mobile remains stacked.
