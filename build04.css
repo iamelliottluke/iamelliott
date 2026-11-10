@@ -691,3 +691,45 @@ body.home .method .kicker,body.home .method h2,body.home .method-bottom{z-index:
 @media(prefers-reduced-motion:reduce){
  body.home .method .method-overlay{transition:none}
 }
+
+/* BUILD 06 — constrained polish: preserve project themes and all existing modules. */
+/* Original animated Elliott lettering: 20% larger, with half-height overlapping
+   the top of the redacted "jack". */
+body.home .about-heading .handwriting {
+  width:clamp(192px,22.8vw,360px);
+  top:-.50em;
+  left:0;
+  transform:rotate(-5deg);
+  z-index:3;
+}
+body.home .about-heading .handwriting img {width:100%;height:auto;display:block;object-fit:contain;}
+/* Give the two-column case study a shared vertical centre line without centering
+   the copy's text or modifying the media dimensions. */
+@media (min-width:741px) {
+  .case-wrap .story-block.receipt-story {align-items:center;}
+  .receipt-story>div:last-child {align-self:center;}
+}
+/* Editorial priority: heading first, invitation second, quotation third.
+   Desktop remains a single headline line; mobile uses two large readable lines. */
+@media (min-width:1101px) {
+  body.home .work-title {grid-template-columns:minmax(0,1fr) minmax(270px,.35fr);column-gap:clamp(20px,2.4vw,47px);}
+  body.home .work-title>h2 {font-size:clamp(54px,6.5vw,114px);letter-spacing:-.091em;}
+  body.home .work-title>.work-intro blockquote {font-size:clamp(26px,2.65vw,45px);}
+  body.home .work-title>.work-pitch p {font-size:clamp(19px,1.8vw,29px);}
+}
+@media (max-width:1100px) {
+  body.home .work-title>h2 {font-size:clamp(52px,8.25vw,92px);white-space:normal;text-align:center;line-height:1.02;max-width:100%;}
+  body.home .work-title>h2 span,body.home .work-title>h2 em {display:inline;}
+}
+@media (max-width:740px) {
+  body.home .about-heading .handwriting {width:clamp(186px,48vw,300px);top:-.48em;left:0;}
+  body.home .work-title {gap:clamp(23px,5.5vw,38px);}
+  body.home .work-title>h2 {font-size:clamp(51px,12.6vw,83px);line-height:.99;white-space:normal;letter-spacing:-.086em;}
+  body.home .work-title>h2 span,body.home .work-title>h2 em {display:block;}
+  body.home .work-title>.work-intro blockquote{font-size:clamp(27px,6.6vw,39px);}
+  body.home .work-title>.work-intro small{margin-top:10px;}
+  body.home .work-title>.work-pitch {order:0;}
+  body.home .work-title>.work-pitch p {font-size:clamp(20px,5.05vw,25px);gap:8px;line-height:1.3;}
+  body.home .work-title>.work-intro{order:1;}
+  body.home .work-title>h2{order:-1;}
+}
