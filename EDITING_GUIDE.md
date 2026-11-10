@@ -1,35 +1,39 @@
-# IAMELLIOTT | How to edit the site
+# IAMELLIOTT | Editing and publishing guide
 
-The site is ordinary HTML, CSS and JavaScript. You can edit copy directly in GitHub and preview edits before publishing.
+The live site at https://iamelliott.me is static HTML, CSS and JavaScript hosted through GitHub Pages from `main`. Cloudflare manages DNS, and GitHub Pages handles the HTTPS certificate.
 
-## Change written copy
-- `index.html`: homepage, About, "Show. Don't Tell...", How I Work, contact form text, and card descriptions.
-- `work/greendoor.html`: Green Door world-building and event case study.
-- `work/campaigns.html`: [Nowhere to Wear It] and [EQUINOX] campaign case studies.
-- `work/collaborations.html`: Medusa and DJ Kayelo case studies.
-- `work/moving-imagery.html`: Hike Society, MTM, and original film descriptions.
-- `work/practical-solutions.html`: workplace tool and receipt communications case studies.
-- `work/welcome-mat.html`: newsletter, editorial and publication case study.
+## Edit copy
+- `index.html`: homepage headline, About, Selected Work, How I Work and contact.
+- `work/greendoor.html`: Green Door Community.
+- `work/campaigns.html`: Nowhere to Wear It and Equinox.
+- `work/collaborations.html`: Medusa and DJ collaborations.
+- `work/moving-imagery.html`: Hike Society, MTM and films.
+- `work/practical-solutions.html`: workplace tool, SDA communication and receipt story.
+- `work/welcome-mat.html`: editorial, newsletter and print publication.
 
-Find the sentence you want in GitHub's editor, replace only the words between HTML tags, then commit to a **review branch**. Don't remove tags like `<h2>`, `<p>`, or `</div>`.
+Edit the words between existing HTML tags. Avoid inadvertently removing surrounding tags or attributes.
 
-## Swap an image, GIF or video
-1. Upload the replacement file to the root of the repository.
-2. Open `media.js`, find its descriptive key, and change the filename in quotes.
-3. Save. You do **not** need to change all the page HTML references.
+## Replace media
+1. Upload the replacement image, GIF, video or PDF to the repository root on a review branch.
+2. Update the corresponding filename in `media.js` when the asset uses a media key.
+3. Check the current mapping and intended placement in `assets readme.txt`.
+4. Use the browser QA results and visually inspect the pages before publishing.
 
-Examples: `butterfly: 'butterfly.gif'`, `greenDoor01: 'gd1.mp4'`, `welcomeMatIllustration01: 'wm1.png'`, `hikeSociety: 'hs.mp4'`.
+Some stills (including `receipt-divider.png`) and icons are referenced directly in HTML and are not mapped through `media.js`. The original `overlay5.webp` is preserved, while `overlay5-keyed.webp` is its transparent How I Work display derivative.
 
-The same butterfly GIF is currently reused in the homepage hero, How I Work and Contact sections. Its size and placement are controlled in `build04.css`.
+## Layout and colour
+`site.css`, `build03.css`, and `build04.css` are **all loaded**, in that order. Most later page-specific optical adjustments live at the end of `build04.css`. Avoid deleting or consolidating these layers without screenshots showing identical rendering across the site.
 
-## Change visual layout
-`build04.css` holds the final component-specific layout rules. The older `site.css` and `build03.css` are retained until the separate post-approval CSS cleanup, to avoid changing the appearance unexpectedly.
+The homepage's Corazón accent is `--accent-corazon: #CC2208`, scoped to the home page. Case-study palettes are separate. Responsive rules deliberately differ between desktop and mobile.
 
-## Publish safely
-Review changes on a separate branch first. Do not edit `CNAME` or Cloudflare DNS until the final cutover to `iamelliott.me` is approved.
+## Publish and verify
+1. Make changes on a new review branch based on `main`.
+2. Open a pull request; check the **Site QA** workflow and any screenshot artifacts.
+3. Merge only after approving the result.
+4. Confirm the GitHub Pages deployment workflow **concluded successfully**.
+5. Test `https://iamelliott.me` and an affected case study in a private browser window.
+
+The production custom domain is set by `CNAME`. Do not edit it, DNS records, the old-domain redirect, or email settings for ordinary content updates.
 
 ## Contact
-The Formspree form action lives in `index.html`. Enquiry notifications are configured in your Formspree account; confirm delivery there after launch.
-
-## Homepage Corazon colour and final typography
-`build04.css` defines `--accent-corazon: #CC2208` under `IAMELLIOTT FINAL ACCENT & OPTICAL FINISH`. Change this one hexadecimal value to change the homepage's orange/red accents without affecting any project-page themes. The hero, Show/Don't Tell, butterfly and About overrides are grouped immediately below it.
+The Formspree form endpoint is in `index.html`; the notification destination and delivery status are managed inside Formspree, not by the contact email displayed on the page.
