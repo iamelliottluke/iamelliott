@@ -1,7 +1,7 @@
 name: IAMELLIOTT Build 06 visual verification
 on:
   push:
-    branches: [iamelliott-build06-polish]
+    branches: [iamelliott-build06-polish, iamelliott-build07-overlay-key]
   workflow_dispatch:
 permissions:
   contents: read

@@ -37,7 +37,7 @@ try:
    measurements.append(data)
    if errors:issues.append(f'{width}: JS errors: {errors[:2]}')
    if data['scroll']>width+2:issues.append(f'{width}: horizontal overflow: {data["scroll"]}')
-   if not data['overlayReady'] or data['overlayStyle']<50:issues.append(f'{width}: green-screen overlay did not composite')
+   if not data['overlayReady'] or data['overlayStyle']<20:issues.append(f'{width}: transparent overlay did not load')
    if not data['signature'] or data['signature']['w']<185:issues.append(f'{width}: Elliott signature not enlarged')
    title=data['title']
    if title and (title['x']<-5 or title['right']>width+5):issues.append(f'{width}: Show headline clipped {title}')

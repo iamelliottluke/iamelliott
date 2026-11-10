@@ -52,34 +52,13 @@
     document.querySelectorAll('[data-reveal]').forEach(el => { el.classList.add('will-reveal'); observer.observe(el); });
   }
 
-  // Optional How I Work overlay: remove photographed green-screen pixels
-  // at load time. Uses original uploaded overlay5.webp only, never a substitute asset.
+  // The source image is pre-keyed once in CI, not per browser visit.
+  // Its original overlay5.webp is retained untouched for future replacements.
   const methodOverlay = document.querySelector('[data-method-overlay]');
   if (methodOverlay && MEDIA.overlayMethod) {
     const source = new Image();
-    source.decoding = 'async';
     source.onload = () => {
-      const width = Math.min(source.naturalWidth, 1600);
-      const height = Math.max(1, Math.round(source.naturalHeight * width / source.naturalWidth));
-      const canvas = document.createElement('canvas');
-      canvas.width = width;
-      canvas.height = height;
-      const ctx = canvas.getContext('2d', { willReadFrequently: true });
-      if (!ctx) return;
-      ctx.drawImage(source, 0, 0, width, height);
-      const pixels = ctx.getImageData(0, 0, width, height);
-      const data = pixels.data;
-      for (let i = 0; i < data.length; i += 4) {
-        const r = data[i], g = data[i + 1], b = data[i + 2];
-        // Strong green dominance, then soften slightly around anti-aliased edges.
-        const excess = g - Math.max(r, b);
-        if (g > 65 && excess > 16) {
-          const keep = Math.max(0, Math.min(1, (38 - excess) / 22));
-          data[i + 3] = Math.round(data[i + 3] * keep);
-        }
-      }
-      ctx.putImageData(pixels, 0, 0);
-      methodOverlay.style.backgroundImage = 'url("' + canvas.toDataURL('image/webp', .86) + '")';
+      methodOverlay.style.backgroundImage = 'url("' + asset('overlayMethod') + '")';
       methodOverlay.classList.add('is-ready');
     };
     source.onerror = () => { methodOverlay.hidden = true; };

@@ -46,7 +46,7 @@ window.IAM_MEDIA = Object.freeze({
   welcomeMatIllustration02: 'wm2.png',
   fallback: 'fallback.gif',
   overlayHome: 'overlay6.webp',
-  overlayMethod: 'overlay5.webp', // chroma-keyed over How I Work; requires this source file
+  overlayMethod: 'overlay5-keyed.webp', // transparent derivative of original overlay5.webp; no per-viewer keying
   overlayGreenDoor: 'overlay2.mp4',
   overlayCampaigns: 'overlay1.webp',
   overlayCollaborations: 'overlay1.mp4',
