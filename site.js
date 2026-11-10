@@ -52,6 +52,55 @@
     document.querySelectorAll('[data-reveal]').forEach(el => { el.classList.add('will-reveal'); observer.observe(el); });
   }
 
+  // Optional How I Work overlay: remove photographed green-screen pixels
+  // at load time. Uses original uploaded overlay5.webp only, never a substitute asset.
+  const methodOverlay = document.querySelector('[data-method-overlay]');
+  if (methodOverlay && MEDIA.overlayMethod) {
+    const source = new Image();
+    source.decoding = 'async';
+    source.onload = () => {
+      const width = Math.min(source.naturalWidth, 1600);
+      const height = Math.max(1, Math.round(source.naturalHeight * width / source.naturalWidth));
+      const canvas = document.createElement('canvas');
+      canvas.width = width;
+      canvas.height = height;
+      const ctx = canvas.getContext('2d', { willReadFrequently: true });
+      if (!ctx) return;
+      ctx.drawImage(source, 0, 0, width, height);
+      const pixels = ctx.getImageData(0, 0, width, height);
+      const data = pixels.data;
+      for (let i = 0; i < data.length; i += 4) {
+        const r = data[i], g = data[i + 1], b = data[i + 2];
+        // Strong green dominance, then soften slightly around anti-aliased edges.
+        const excess = g - Math.max(r, b);
+        if (g > 65 && excess > 16) {
+          const keep = Math.max(0, Math.min(1, (38 - excess) / 22));
+          data[i + 3] = Math.round(data[i + 3] * keep);
+        }
+      }
+      ctx.putImageData(pixels, 0, 0);
+      methodOverlay.style.backgroundImage = 'url("' + canvas.toDataURL('image/webp', .86) + '")';
+      methodOverlay.classList.add('is-ready');
+    };
+    source.onerror = () => { methodOverlay.hidden = true; };
+    source.src = asset('overlayMethod');
+  }
+
+  // Work menus: native keyboard-accessible details, dismiss on Escape/outside click.
+  const allWorkMenus = document.querySelectorAll('.work-menu, .work-mobile-submenu');
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape') {
+      allWorkMenus.forEach(menu => { menu.open = false; });
+      const mainMenu = document.querySelector('[data-menu]');
+      if (mainMenu) mainMenu.open = false;
+    }
+  });
+  document.addEventListener('click', event => {
+    allWorkMenus.forEach(menu => {
+      if (!menu.contains(event.target)) menu.open = false;
+    });
+  });
+
   const year = document.querySelector('[data-year]');
   if (year) year.textContent = String(new Date().getFullYear());
 
