@@ -733,3 +733,8 @@ body.home .about-heading .handwriting img {width:100%;height:auto;display:block;
   body.home .work-title>.work-intro{order:1;}
   body.home .work-title>h2{order:-1;}
 }
+
+/* Build07: source overlay5.webp has dark-red matte (not green screen).
+   Transparent derivative preserves its highlights without darkening the acid panel. */
+body.home .method .method-overlay.is-ready {opacity:.23;mix-blend-mode:screen;}
+@media (max-width:740px) {body.home .method .method-overlay.is-ready {opacity:.16;}}
