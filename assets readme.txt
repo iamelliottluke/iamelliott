@@ -14,7 +14,7 @@ HOMEPAGE
 - butterfly.gif → hero, How I Work and contact, at individually controlled sizes/positions.
 - about.gif → looping portrait in About via media.js about.
 - e.gif → original animated handwritten Elliott above the About heading via media.js elliottSignature (replaces the older typeset handwritten text).
-- overlay5.webp → planned How I Work background, via media.js overlayMethod and site.js green-screen key. Stretched to cover the section at low opacity, preserving the yellow-green background. REQUIRED FILE NOT YET PRESENT IN REPOSITORY (last checked 10 November 2026). The overlay remains hidden safely until uploaded.
+- overlay5.webp → How I Work background, via media.js overlayMethod and site.js client-side green-screen key. It is present in the repository, stretched to cover the section at low opacity above the existing acid background. Its pixels are keyed in a canvas at page load; the original source is preserved.
 - Selected Work videos → door.mp4, ntwi2.mp4, collab1.mp4, hs.mp4, receipt.mp4, wm1.mp4 (mapped in media.js).
 
 CASE-STUDY HEADER OVERLAYS
@@ -55,3 +55,9 @@ BEHAVIOUR / ACCURACY
 - WORK navigation dropdowns link to all six portfolio case studies on desktop and mobile.
 - New overlays and GIFs are never synthetically recreated: original files must be uploaded first.
 - Do not remove assets solely because they are not referenced in current HTML; archived work may still need them.
+
+BUILD 06 OPTICAL FINISH
+- e.gif is rendered 20% larger above the redacted jack, its centre aligned near the top of the word, with responsive width limits.
+- How I Work overlay5.webp is a still background keyed by the existing JS, not a new video.
+- Selected Work prioritises Show. Don't Tell..., then Pick a project below.; on mobile the headline breaks into two deliberately larger lines and the quotation follows as a secondary item.
+- Practical Solutions section 03 keeps its original receipt video dimensions and left-aligned copy, centring the text column vertically beside the film on desktop. Mobile remains stacked.
