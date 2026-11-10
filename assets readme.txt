@@ -32,9 +32,12 @@ overlay4.mp4 = lower opacity and stretch to fit and overlay over the working sma
 top section. autoplay on loop on mute.
 overlay8.gif = lower opacity and stretch to fit and overlay over the The Welcome Mat, top
 section. autoplay on loop on mute.
+overlay5.webp = lower opacity and stretch to fit and overlay over the The Welcome Mat, top
+section. autoplay on loop on mute. (this overlay has a green screen background that needs to be keyed out to reveal the existing background section)
 receipt.mp4 = use a preview looping autoplay mute visual and as added visual within case study aligned to the left of 'A fair go should be easier to find.'
-receipt.pdf = use as supporting visual in relevant case study, use its length to fill the void on left of content on relevant case study, the recipe can run the length of the sections ensuring the final tell elliott qr code is cut off (it's okay that the asset is publicly in the repository)
-butterfly.gif = use on main header page and smaller copy on last contact page (see visual in chat)
+receipt.pdf = use as supporting visual in relevant case study of the sections ensuring the final tell elliott qr code is cut off (it's okay that the asset is publicly in the repository)
+butterfly.gif = use on main header page and smaller copy on how I work and even smaller on last contact page.
 gd1.mp4 = goes to the left of 'I wanted a reason to come over' autoplay and aligned
 wm1.png = illustration from the welcome mat, use to left of 'Something to read before you knock.' scale to fit
 wm2.png = illustration from the welcome mat, use to left of 'A little longer than a reel.' scale to fit
+e.gif = replace 'Elliott' handwriting from about section and use the matching colour of this file as the highlight font colour for the about me section header to match
