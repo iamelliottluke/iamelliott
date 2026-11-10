@@ -4,6 +4,7 @@
  * Files are relative to the site root. External HTTPS links also work.
  */
 window.IAM_MEDIA = Object.freeze({
+  elliottSignature: 'e.gif', // original animated handwritten Elliott for About heading
   about: 'about.gif',               // replace with a still JPG/WEBP when wanted
   indexBackdrop: 'INDEX_BACKGROUND.mp4',
   ambientBackdrop: 'SITE_BACKGROUND.mp4',
@@ -45,6 +46,7 @@ window.IAM_MEDIA = Object.freeze({
   welcomeMatIllustration02: 'wm2.png',
   fallback: 'fallback.gif',
   overlayHome: 'overlay6.webp',
+  overlayMethod: 'overlay5.webp', // chroma-keyed over How I Work; requires this source file
   overlayGreenDoor: 'overlay2.mp4',
   overlayCampaigns: 'overlay1.webp',
   overlayCollaborations: 'overlay1.mp4',
