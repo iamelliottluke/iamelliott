@@ -1,43 +1,57 @@
-READ ME
-site file guide
-instructions such as 'align to the left of' can be ignore for mobile layout optimisation, most instruction is for desktop layout. ensure both mobile and desktop are laid out as well as possible.
-reel.mp4 = elliott films short film teasers
-collab.mp4 = strongest clear collaborative reel posts
-eq.mp4 = gathering iv equinox afterglow reels
-gd.mp4 = strongest green door world building reels
-ntwi.mp4 = gathering iii nowhere to wear it strongest campaign reels
-wm.mp4 = strongest welcome mat reels, teaser then best excerpts from gathering iv including
-medusa mention
-hs.mp4 = hike society reel, align to the left of the 'People first. Pretty landscapes second.' section
-welcome mat print = printer ready edition of volume I of the welcome mat including all articles
-up until gathering iv
-mtm1michael = final interview I edited for MTM for michael
-mtm2tim = final interview I edited for MTM for tim
-mtm3marcus = final interview I edited for MTM for marcus
-door.mp4 = reel of green door swinging up int frame, crop to centre and use as the cover looping
-visual for green door community
-about.gif = gif of photos of me, use as portrait in about me section
-fallback.gif = new fallback for all photos and videos in case of slow loading etc
-overlay6.webp = lower opacity and stretch to fit and overlay over the home page first section
-with the 'I make good ideas into good work' autoplay on loop on mute
-overlay2.mp4 = lower opacity and stretch to fit and overlay over the green door top section with
-I built a world, then opened the door. autoplay on loop on mute.
-overlay1.webp = lower opacity and stretch to fit and overlay over the Make them look. top
-section. autoplay on loop on mute.
-overlay1.mp4 = lower opacity and stretch to fit and overlay over the Good work, good company. top
-section. autoplay on loop on mute.
-overlay3.mp4 = lower opacity and stretch to fit and overlay over the Imagery that moves,top
-section. autoplay on loop on mute.
-overlay4.mp4 = lower opacity and stretch to fit and overlay over the working smarter not harder,
-top section. autoplay on loop on mute.
-overlay8.gif = lower opacity and stretch to fit and overlay over the The Welcome Mat, top
-section. autoplay on loop on mute.
-overlay5.webp = lower opacity and stretch to fit and overlay over the The Welcome Mat, top
-section. autoplay on loop on mute. (this overlay has a green screen background that needs to be keyed out to reveal the existing background section)
-receipt.mp4 = use a preview looping autoplay mute visual and as added visual within case study aligned to the left of 'A fair go should be easier to find.'
-receipt.pdf = use as supporting visual in relevant case study of the sections ensuring the final tell elliott qr code is cut off (it's okay that the asset is publicly in the repository)
-butterfly.gif = use on main header page and smaller copy on how I work and even smaller on last contact page.
-gd1.mp4 = goes to the left of 'I wanted a reason to come over' autoplay and aligned
-wm1.png = illustration from the welcome mat, use to left of 'Something to read before you knock.' scale to fit
-wm2.png = illustration from the welcome mat, use to left of 'A little longer than a reel.' scale to fit
-e.gif = replace 'Elliott' handwriting from about section and use the matching colour of this file as the highlight font colour for the about me section header to match
+IAMELLIOTT / ASSET INVENTORY AND DISPLAY GUIDE
+Updated 10 November 2026
+
+SOURCE OF TRUTH
+- media.js controls named image/video assets. Change filenames there to replace media.
+- index.html contains the homepage, About, Selected Work, How I Work and contact.
+- work/*.html contain the six case studies.
+- site.css, build03.css and build04.css are loaded in that order. Build04 contains the latest layout rules.
+- GIFs, images and video files live at the repository root.
+- Keep instructions flexible for mobile readability; desktop alignments need not be repeated exactly on narrow screens.
+
+HOMEPAGE
+- overlay6.webp → header-overlay behind "I make good ideas into good work." via media.js overlayHome.
+- butterfly.gif → hero, How I Work and contact, at individually controlled sizes/positions.
+- about.gif → looping portrait in About via media.js about.
+- e.gif → original animated handwritten Elliott above the About heading via media.js elliottSignature (replaces the older typeset handwritten text).
+- overlay5.webp → planned How I Work background, via media.js overlayMethod and site.js green-screen key. Stretched to cover the section at low opacity, preserving the yellow-green background. REQUIRED FILE NOT YET PRESENT IN REPOSITORY (last checked 10 November 2026). The overlay remains hidden safely until uploaded.
+- Selected Work videos → door.mp4, ntwi2.mp4, collab1.mp4, hs.mp4, receipt.mp4, wm1.mp4 (mapped in media.js).
+
+CASE-STUDY HEADER OVERLAYS
+- overlay2.mp4 → Green Door / "I built a world, then opened the door."
+- overlay1.webp → Campaigns / "Make them look."
+- overlay1.mp4 → Collaborations / "Good work, good company."
+- overlay3.mp4 → Moving Imagery / "Imagery that moves."
+- overlay4.mp4 → Practical Solutions / "Working smarter, not harder."
+- overlay8.gif → The Welcome Mat.
+These are deliberately low-opacity, cover-fitted decorative media.
+
+PROJECT FILMS AND PHOTOS
+- gd1.mp4–gd4.mp4 → Green Door storytelling films.
+- door.mp4 → door opening visual, looping on the Green Door tile and the case study.
+- ntwi1.mp4–ntwi3.mp4 → Nowhere to Wear It campaign.
+- eq1.mp4–eq6.mp4 → Gathering IV / EQUINOX.
+- collab1.mp4 and collab2.mp4 → DJ and Medusa collaboration films.
+- hs.mp4 → Hike Society film alongside "People first. Pretty landscapes second."
+- mtm1michael.mp4 / mtm2tim.mp4 / mtm3marcus.mp4 → MTM interview edits.
+- reel1.mp4–reel4.mp4 → moving imagery / personal short film previews.
+- wm1.mp4–wm4.mp4 → The Welcome Mat video excerpts.
+- wm1.png and wm2.png → illustrations beside "Something to read before you knock" and "A little longer than a reel."
+- welcome mat print.pdf → downloadable The Welcome Mat Volume I PDF.
+- receipt.mp4 → loop and visual within "A fair go should be easier to find."
+- receipt.pdf → original source of receipt-divider.png, the long horizontal visual dividing the final two Practical Solutions sections; the final QR portion is excluded from the rendered artwork.
+- fallback.gif → video/image loading/error artwork where configured.
+
+FAVICON / INSTALLATION
+- favicon.svg → adaptive light/dark site favicon.
+- favicon-96x96.png and favicon.ico → browser fallback icons.
+- apple-touch-icon.png → Apple home-screen icon.
+- web-app-manifest-192x192.png and web-app-manifest-512x512.png → installable app icons.
+- site.webmanifest → IAMELLIOTT app metadata.
+- favicon.png → legacy image retained for existing Open Graph metadata. Not the primary browser icon.
+
+BEHAVIOUR / ACCURACY
+- Autoplay/scroll-based muted preview behaviour is controlled by site.js and build03.js.
+- WORK navigation dropdowns link to all six portfolio case studies on desktop and mobile.
+- New overlays and GIFs are never synthetically recreated: original files must be uploaded first.
+- Do not remove assets solely because they are not referenced in current HTML; archived work may still need them.
