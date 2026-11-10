@@ -697,9 +697,9 @@ body.home .method .kicker,body.home .method h2,body.home .method-bottom{z-index:
    the top of the redacted "jack". */
 body.home .about-heading .handwriting {
   width:clamp(192px,22.8vw,360px);
-  top:-.50em;
+  top:0;
   left:0;
-  transform:rotate(-5deg);
+  transform:translateY(-58%) rotate(-5deg);
   z-index:3;
 }
 body.home .about-heading .handwriting img {width:100%;height:auto;display:block;object-fit:contain;}
@@ -722,7 +722,7 @@ body.home .about-heading .handwriting img {width:100%;height:auto;display:block;
   body.home .work-title>h2 span,body.home .work-title>h2 em {display:inline;}
 }
 @media (max-width:740px) {
-  body.home .about-heading .handwriting {width:clamp(186px,48vw,300px);top:-.48em;left:0;}
+  body.home .about-heading .handwriting {width:clamp(186px,48vw,300px);top:0;left:0;transform:translateY(-58%) rotate(-5deg);}
   body.home .work-title {gap:clamp(23px,5.5vw,38px);}
   body.home .work-title>h2 {font-size:clamp(51px,12.6vw,83px);line-height:.99;white-space:normal;letter-spacing:-.086em;}
   body.home .work-title>h2 span,body.home .work-title>h2 em {display:block;}
